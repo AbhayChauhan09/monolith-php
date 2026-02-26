@@ -50,14 +50,12 @@ monolith-php/
 5. Insert at least one test user manually.
 6. Update the database connection inside `db.php`:
 
-  ```php
-  $host = "localhost";
-  $user = "root";
-  $password = "your_password";
-  $database = "monolith_db";
+    ```php
+    $host = "localhost";
+    $user = "root";
+    $password = "your_password";
+    $database = "monolith_db";
 
 7. Place the project inside /var/www/.
-
 8. Configure nginx root to /var/www/monolith-php/app.
-
 9. Restart nginx. 
