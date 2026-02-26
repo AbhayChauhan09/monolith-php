@@ -1,5 +1,23 @@
 <?php
-// Login page - UI only (no authentication yet)
+session_start();
+include "db.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $_SESSION["user"] = $username;
+        header("Location: welcome.php");
+        exit();
+    } else {
+        echo "Invalid credentials!";
+    }
+}
 ?>
 
 <!DOCTYPE html>
