@@ -1,5 +1,6 @@
 <?php
-$host = "localhost";
+
+$host = "db";
 $user = "appuser";
 $password = "password123";
 $database = "monolith_db";
