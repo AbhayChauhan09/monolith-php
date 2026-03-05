@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: monolith-nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/html
+      - ./infrastructure/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - monolith-network
+
+  app:
+    image: lakshya0612/php-app:latest
+    container_name: monolith-app
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - monolith-network
+
+  db:
+    image: mariadb:latest
+    container_name: monolith-db
+    environment:
+       MYSQL_ROOT_PASSWORD: mysql
+       MYSQL_DATABASE: monolith_db
+       MYSQL_USER: appuser
+       MYSQL_PASSWORD: password123
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - monolith-network
+
+
+volumes:
+  db-data:
+
+networks:
+  monolith-network:
+
+
