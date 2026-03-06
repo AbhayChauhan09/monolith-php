@@ -11,7 +11,7 @@ if (!isset($_SESSION["user"])) {
 
 <h2>Welcome <?php echo $_SESSION["user"]; ?></h2>
 
-<p>This is a DevOps practice project demonstrating a simple monolithic PHP application.</p>
+<p>This is a DevOps Project demonstrating a simple monolithic PHP application.</p>
 
 <p>Deployed using GitHub, AWS EC2, Docker and GitHub Actions CI/CD.</p>
 
