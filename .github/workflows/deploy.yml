@@ -35,7 +35,7 @@ jobs:
                 username: ${{secrets.EC2_USER}}
                 key: ${{secrets.EC2_SSH_KEY}}
                 script: |
-                  cd monolith-php
+                  cd /home/ec2-user/monolith-php-app
                   docker compose down
                   docker pull ${{secrets.DOCKER_USERNAME}}/php-app:latest
                   docker compose up -d
