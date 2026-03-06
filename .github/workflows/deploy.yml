@@ -36,6 +36,7 @@ jobs:
                 key: ${{secrets.EC2_SSH_KEY}}
                 script: |
                   cd /home/ec2-user/monolith-php-app
+                  git pull origin develop
                   docker compose down
                   docker pull ${{secrets.DOCKER_USERNAME}}/php-app:latest
                   docker compose up -d
