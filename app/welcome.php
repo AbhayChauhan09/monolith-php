@@ -7,6 +7,8 @@ if (!isset($_SESSION["user"])) {
 }
 ?>
 
+<h1>Monolith PHP Application</h1>
+
 <h2>Welcome <?php echo $_SESSION["user"]; ?></h2>
 
 <p>This is a DevOps practice project demonstrating a simple monolithic PHP application.</p>
