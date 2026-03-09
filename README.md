@@ -1,4 +1,4 @@
-# Monolithic Application Deployment
+# Monolithic App Deploy
 
 This project demonstrates deployment of a simple **monolithic PHP login application** using Docker, AWS EC2 and GitHub Actions CI/CD.
 
